@@ -9,7 +9,7 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-module.exports.bootstrap = async function(done) {
+module.exports.bootstrap = async function (done) {
 
   // By convention, this is a good place to set up fake data during development.
   //
@@ -26,6 +26,20 @@ module.exports.bootstrap = async function(done) {
   //   // etc.
   // ]);
   // ```
+
+  if (await sails.models.unit.count() > 0) {
+    return done();
+  }
+
+  await sails.models.unit.createEach([
+    { name: 'piece', description: 'piece' },
+    { name: 'gram', description: 'gram' },
+    { name: 'kilogram', description: 'kilogram' },
+    { name: 'tablespoon', description: 'tablespoon' },
+    { name: 'cup', description: 'cup' },
+    { name: 'milliliter', description: 'milliliter' },
+    { name: 'liter', description: 'liter' }
+  ]);
 
   // Don't forget to trigger `done()` when this bootstrap function's logic is finished.
   // (otherwise your server will never lift, since it's waiting on the bootstrap)

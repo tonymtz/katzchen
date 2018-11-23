@@ -8,6 +8,8 @@
  * https://sailsjs.com/anatomy/config/routes-js
  */
 
+const notFoundResponse = { response: 'notFound' };
+
 module.exports.routes = {
 
 
@@ -44,10 +46,21 @@ module.exports.routes = {
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
+  // AUTH
   'POST /login': 'AuthController.login',
   'POST /logout': 'AuthController.logout',
 
+  // OTHER
   'GET /me': 'UserController.me',
+
+  // USER
+  'PUT /user': notFoundResponse,
+  'DELETE /user': notFoundResponse,
+
+  // UNIT
+  'POST /unit': notFoundResponse,
+  'PUT /unit': notFoundResponse,
+  'DELETE /unit': notFoundResponse,
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
   //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
