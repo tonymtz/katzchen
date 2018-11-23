@@ -27,11 +27,11 @@ module.exports.bootstrap = async function (done) {
   // ]);
   // ```
 
-  if (await sails.models.unit.count() > 0) {
+  if (await sails.models.measure.count() > 0) {
     return done();
   }
 
-  await sails.models.unit.createEach([
+  await sails.models.measure.createEach([
     { name: 'piece', description: 'piece' },
     { name: 'gram', description: 'gram' },
     { name: 'kilogram', description: 'kilogram' },

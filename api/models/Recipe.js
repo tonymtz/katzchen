@@ -33,7 +33,7 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
     ingredients: {
-      collection: 'recipeIngredientUnit',
+      collection: 'recipeIngredientMeasure',
       via: 'recipe'
     }
 

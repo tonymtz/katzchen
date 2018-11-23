@@ -7,13 +7,12 @@
 
 module.exports = {
 
-  // find: async (req, res) => {
-  //
-  //   const recipes = await sails.services.recipeservice.find();
-  //
-  //   res.json(recipes);
-  //
-  // }
+  findOne: async (req, res) => {
+    const recipeId = req.param('id');
+    const recipe = await sails.services.recipeservice.findOne(recipeId);
+
+    res.json(recipe);
+  }
 
 };
 

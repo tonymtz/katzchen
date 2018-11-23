@@ -1,5 +1,5 @@
 /**
- * Unit.js
+ * RecipeIngredientMeasure.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -13,13 +13,8 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    name: {
-      type: 'string',
-      allowNull: false
-    },
-
-    description: {
-      type: 'string',
+    amount: {
+      type: 'number',
       allowNull: false
     },
 
@@ -31,6 +26,18 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+
+    recipe: {
+      model: 'recipe'
+    },
+
+    ingredient: {
+      collection: 'ingredient'
+    },
+
+    measure: {
+      collection: 'measure'
+    }
 
   },
 
