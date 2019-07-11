@@ -22,6 +22,28 @@ module.exports = {
 
     return recipe;
 
+  },
+
+  find: async () => {
+
+    const recipes = await sails.models.recipe.find();
+
+    // recipes.map(async recipe => {
+    //   const recipeIngredientMeasures = await sails.models.recipeingredientmeasure.find({ recipe: recipe.id })
+    //     .populate('measure')
+    //     .populate('ingredient');
+    //
+    //   recipe.ingredients = recipeIngredientMeasures.map(recipeIngredientMeasure => ({
+    //     ingredient: recipeIngredientMeasure.ingredient,
+    //     measure: recipeIngredientMeasure.measure,
+    //     amount: recipeIngredientMeasure.amount
+    //   }));
+    //
+    //   return recipe;
+    // });
+
+    return await Promise.all(recipes);
+
   }
 
 };

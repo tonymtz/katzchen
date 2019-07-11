@@ -32,11 +32,11 @@ module.exports = {
     },
 
     ingredient: {
-      collection: 'ingredient'
+      model: 'ingredient'
     },
 
     measure: {
-      collection: 'measure'
+      model: 'measure'
     }
 
   },
